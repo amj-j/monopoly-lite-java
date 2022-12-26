@@ -20,9 +20,6 @@ public class PropertiesGetter {
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line;
-            while ((line = bufferedReader.readLine()) != null) {
-              System.out.println(line);
-            }
             for (int i = 0; i < Constants.PROPERTIES_NUM; i++) {
                 if ((line = bufferedReader.readLine()) != null) {
                     createProperty(line);
