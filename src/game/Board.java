@@ -5,19 +5,28 @@ import java.util.Random;
 
 import utils.Constants;
 import utils.IOmanager;
+import utils.PropertiesGetter;
 import tiles.*;
 
 public class Board {
+    public PropertiesGetter propertiesGetter;
     public ArrayList<Player> players = new ArrayList<Player>();
     public Tile[] tiles = new Tile[Constants.TILES_NUM];
     public ArrayList<String> lostPlayers = new ArrayList<String>();
 
-    public Board(int playersNum) {
-        initPlayers(playersNum);
+    public Board() {
+        propertiesGetter = new PropertiesGetter(this);
+        initPlayers();
         initTiles();
     }
 
-    private void initPlayers(int playersNum) {
+    private void initPlayers() {
+        int playersNum = IOmanager.readIntInRange(
+            Constants.MIN_PLAYERS,
+            Constants.MAX_PLAYERS,
+            "How many players will there be?",
+            "Enter valid number of players!"       
+        );
         String name;
         for (int i = 0; i < playersNum; i++) {
             name = IOmanager.readString("Enter the name of player " + (i+1));
@@ -40,7 +49,7 @@ public class Board {
     void initArm(int armNum) {
         ArrayList<Tile> arm = new ArrayList<Tile>();
         for (int i = 0; i < Constants.PROPERTIES_NUM/4; i++) {
-            arm.add(new PropertyTile());
+            arm.add(propertiesGetter.takePropertyTile());
         }
         for (int i = 0; i < Constants.CHANCES_NUM/4; i++) {
             arm.add(new ChanceTile());
