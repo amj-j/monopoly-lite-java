@@ -1,1 +1,16 @@
-//name price stayCost
+Red_Street 5000 1000
+Blue_Street 5500 1100
+Green_Street 6000 1200
+Yellow_Street 6500 1300
+West_Street 6000 1200
+East_Street 6500 1300
+South_Street 7000 1400
+North_Street 7500 1500
+Morning_Street 7500 1500
+Noon_Street 8000 1600
+Evening_Street 8500 1700
+Midnight_Street 9000 1800
+Typescript_Street 10000 2000
+C++_Street 12000 2500
+Python_Street 14000 3000
+Java_Street 16000 3500
