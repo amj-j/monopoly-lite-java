@@ -3,6 +3,6 @@ package game;
 public class Game {
 
     public Game() {
-        new Board();
+        Board.getInstance();
     }
 }

@@ -3,13 +3,11 @@ package game;
 import utils.Constants;
 
 public class Player {
-    Board board;
     String name;
     int money = Constants.INIT_MONEY;
     int imprisoned = 0;
 
-    public Player(String name, Board board) {
-        this.board = board;
+    public Player(String name) {
         this.name = name;
     }
 

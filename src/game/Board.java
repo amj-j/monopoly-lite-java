@@ -9,15 +9,22 @@ import utils.PropertiesGetter;
 import tiles.*;
 
 public class Board {
-    public PropertiesGetter propertiesGetter;
+    private static Board instance = null;
+
     public ArrayList<Player> players = new ArrayList<Player>();
     public Tile[] tiles = new Tile[Constants.TILES_NUM];
     public ArrayList<String> lostPlayers = new ArrayList<String>();
 
-    public Board() {
-        propertiesGetter = new PropertiesGetter(this);
+    private Board() {
         initPlayers();
         initTiles();
+    }
+
+    public static Board getInstance() {
+        if (instance == null) {
+            instance = new Board();
+        }
+        return instance;
     }
 
     private void initPlayers() {
@@ -30,7 +37,7 @@ public class Board {
         String name;
         for (int i = 0; i < playersNum; i++) {
             name = IOmanager.readString("Enter the name of player " + (i+1));
-            players.add(new Player(name, this));
+            players.add(new Player(name));
         }
 
     }
@@ -47,6 +54,7 @@ public class Board {
     }
 
     void initArm(int armNum) {
+        PropertiesGetter propertiesGetter = PropertiesGetter.getInstance();
         ArrayList<Tile> arm = new ArrayList<Tile>();
         for (int i = 0; i < Constants.PROPERTIES_NUM/4; i++) {
             arm.add(propertiesGetter.takePropertyTile());

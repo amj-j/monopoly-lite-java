@@ -6,15 +6,13 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 
-import game.Board;
 import tiles.PropertyTile;
 
 public class PropertiesGetter {
+    private static PropertiesGetter instance;
     private ArrayList<PropertyTile> propertyList = new ArrayList<PropertyTile>();
-    private Board board;
 
-    public PropertiesGetter(Board board) {
-        this.board = board;
+    private PropertiesGetter() {
         try {
             File file = new File("property_list.txt");
             FileReader fileReader = new FileReader(file);
@@ -35,13 +33,20 @@ public class PropertiesGetter {
         }
     }
 
+    public static PropertiesGetter getInstance() {
+        if (instance == null) {
+            instance = new PropertiesGetter();
+        }
+        return instance;
+    }
+
     private void createProperty(String line) {
         String[] params = line.split("\\s+");
         String name = params[0];
         try {
             int price = Integer.parseInt(params[1]);
             int stayCost = Integer.parseInt(params[2]);
-            propertyList.add(new PropertyTile(board, name, price, stayCost));
+            propertyList.add(new PropertyTile(name, price, stayCost));
         }
         catch (NumberFormatException e) {
             invalidFile();
