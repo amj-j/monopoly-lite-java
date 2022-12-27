@@ -68,7 +68,7 @@ public class Board {
         int armIndex;
         int tilesIndex = (Constants.TILES_NUM/4)*armNum + 1;
         while (!arm.isEmpty()) {
-            armIndex = rand.nextInt();
+            armIndex = rand.nextInt(arm.size());
             tmp = arm.get(armIndex);
             arm.remove(armIndex);
             tiles[tilesIndex] = tmp;
