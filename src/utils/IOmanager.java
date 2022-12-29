@@ -21,11 +21,24 @@ public abstract class IOmanager {
         return KeyboardInput.readString(text);
     }
 
-    public static int readIntInRange(int from, int to, String primaryText, String correctionText) {
-        int index = readInt(primaryText);
+    public static int readIntInRange(int from, int to, String text) {
+        int index = readInt(text);
         while (index < from || index >= to) {
-            index = readInt(correctionText);
+            index = readInt("It must be in range [" + from + "; " + to + ")!");
         }
         return index;
+    }
+
+    public static boolean readYesNo(String text) {
+        String answer = readString(text + "(y or n)");
+        while (!(answer == "y" || answer == "n")) {
+            answer = readString("Enter \"y\" for Yes or \"n\" for No.");
+        }
+        if (answer == "y") {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }

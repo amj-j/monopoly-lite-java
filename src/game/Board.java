@@ -31,8 +31,7 @@ public class Board {
         int playersNum = IOmanager.readIntInRange(
             Constants.MIN_PLAYERS,
             Constants.MAX_PLAYERS,
-            "How many players will there be?",
-            "Enter valid number of players!"       
+            "How many players will there be?"   
         );
         String name;
         for (int i = 0; i < playersNum; i++) {

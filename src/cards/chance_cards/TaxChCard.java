@@ -3,7 +3,7 @@ package cards.chance_cards;
 import utils.IOmanager;
 
 public class TaxChCard extends ChanceCard{
-    private final int MONEY_PERCENTAGE = 20;
+    private static final int MONEY_PERCENTAGE = 20;
     
     @Override
     public void printCard() {

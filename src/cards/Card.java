@@ -1,7 +1,5 @@
 package cards;
 
 public abstract class Card {
-    public void printCard() {
-
-    }
+    public void printCard() {}
 }

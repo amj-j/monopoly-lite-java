@@ -3,7 +3,7 @@ package cards.chance_cards;
 import utils.IOmanager;
 
 public class CompetitionWinnerChCard extends ChanceCard {
-    private final int MONEY_AMOUNT = 3000;
+    private static final int MONEY_AMOUNT = 3000;
     
     @Override
     public void printCard() {

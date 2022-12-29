@@ -3,7 +3,7 @@ package cards.chance_cards;
 import utils.IOmanager;
 
 public class CarRepairChCard extends ChanceCard {
-    private final int MONEY_AMOUNT = 2000;
+    private static final int MONEY_AMOUNT = 2000;
 
     @Override
     public void printCard() {

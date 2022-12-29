@@ -34,37 +34,33 @@ public class Player {
         position += steps;
         if (position >= Constants.TILES_NUM) {
             position -= Constants.TILES_NUM;
-            throughStart();
+            if (position != Constants.TILES_NUM) {
+                passedStart();
+            }
         }
     }
 
-    private void throughStart() {
-        if (position == 0) {
-            steppedOnStart();
-        }
-        else {
-            passedStart();
-        }
+    public void moveTo(int tileNum) {
+        position = tileNum;
     }
 
     private void passedStart() {
         IOmanager.println("You passed start, you get " + Constants.PASS_START_MONEY);
-        giveOrTakeMoney(Constants.PASS_START_MONEY);
-    }
-
-    private void steppedOnStart() {
-        IOmanager.println("You stepped on start, you get " + Constants.STEP_ON_START_MONEY);
-        giveOrTakeMoney(Constants.STEP_ON_START_MONEY);
+        giveMoney(Constants.PASS_START_MONEY);
     }
 
 
-    public void giveOrTakeMoney(int amount) {
+    public void giveMoney(int amount) {
         money += amount;
+    }
+
+    public void takeMoney(int amount) {
+        money -= amount;
     }
 
     public void takeMoneyByPercentage(int percentage) {
         int moneyToTake = (money*percentage)/100;
-        giveOrTakeMoney(moneyToTake);
+        takeMoney(moneyToTake);
     }
 
 
