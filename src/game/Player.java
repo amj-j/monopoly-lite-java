@@ -49,6 +49,11 @@ public class Player {
         giveMoney(Constants.PASS_START_MONEY);
     }
 
+    public void goToJail() {
+        moveTo(Constants.JAIL_TILE_INDEX);
+        imprisoned = Constants.ROUNDS_IN_JAIL;
+    }
+
 
     public void giveMoney(int amount) {
         money += amount;
@@ -56,11 +61,6 @@ public class Player {
 
     public void takeMoney(int amount) {
         money -= amount;
-    }
-
-    public void takeMoneyByPercentage(int percentage) {
-        int moneyToTake = (money*percentage)/100;
-        takeMoney(moneyToTake);
     }
 
 

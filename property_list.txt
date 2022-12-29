@@ -14,3 +14,4 @@ Typescript_Street 10000 2000
 C++_Street 12000 2500
 Python_Street 14000 3000
 Java_Street 16000 3500
+Assembler_Street 20000 4500

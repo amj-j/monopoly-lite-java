@@ -8,16 +8,20 @@ import utils.IOmanager;
 import utils.PropertiesGetter;
 import tiles.*;
 
+import cards.chance_cards.*;
+
 public class Board {
     private static Board instance = null;
 
     public ArrayList<Player> players = new ArrayList<Player>();
     public Tile[] tiles = new Tile[Constants.TILES_NUM];
+    public Deck chanceDeck = new Deck();
     public ArrayList<String> lostPlayers = new ArrayList<String>();
 
     private Board() {
         initPlayers();
         initTiles();
+        initChanceDeck();
     }
 
     public static Board getInstance() {
@@ -73,5 +77,13 @@ public class Board {
             tiles[tilesIndex] = tmp;
             tilesIndex++;
         }
+    }
+
+    private void initChanceDeck() {
+        chanceDeck.addToBottom(new BirthdayChCard());
+        chanceDeck.addToBottom(new CarRepairChCard());
+        chanceDeck.addToBottom(new CompetitionWinnerChCard());
+        chanceDeck.addToBottom(new GoToJailChCard());
+        chanceDeck.addToBottom(new TaxChCard());
     }
 }

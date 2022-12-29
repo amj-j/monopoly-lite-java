@@ -1,5 +1,7 @@
 package cards;
 
+import game.Player;
+
 public abstract class Card {
-    public void printCard() {}
+    public void printCard(Player player) {}
 }

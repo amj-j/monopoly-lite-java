@@ -8,6 +8,11 @@ public class JailTile extends Tile {
 
     @Override
     public void steppedOn(Player player) {
-        IOmanager.println("You are on a visit in jail.");
+        if (player.getImprisoned() > 0) {
+            
+        }
+        else {
+            IOmanager.println("You are on a visit in jail.");
+        }
     }
 }
