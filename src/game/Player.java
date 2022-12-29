@@ -38,10 +38,18 @@ public class Player {
                 passedStart();
             }
         }
+        Board.getInstance().tiles[this.position].steppedOn(this);
     }
 
-    public void moveTo(int tileNum) {
+    public void moveTo(int tileNum, boolean backwards) {
+        int previousPosition = position;
         position = tileNum;
+        if (!backwards) {
+            if (previousPosition >= position) {
+                passedStart();
+            }
+        }
+        Board.getInstance().tiles[this.position].steppedOn(this);
     }
 
     private void passedStart() {
@@ -50,7 +58,7 @@ public class Player {
     }
 
     public void goToJail() {
-        moveTo(Constants.JAIL_TILE_INDEX);
+        moveTo(Constants.JAIL_TILE_INDEX, true);
         imprisoned = Constants.ROUNDS_IN_JAIL;
     }
 
