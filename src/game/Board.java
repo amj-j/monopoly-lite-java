@@ -9,6 +9,7 @@ import utils.PropertiesGetter;
 import tiles.*;
 
 import cards.chance_cards.*;
+import player.Player;
 
 public class Board {
     private static Board instance = null;

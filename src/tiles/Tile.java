@@ -1,6 +1,6 @@
 package tiles;
 
-import game.Player;
+import player.Player;
 
 public abstract class Tile {
     

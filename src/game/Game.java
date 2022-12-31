@@ -1,6 +1,7 @@
 package game;
 
 import utils.IOmanager;
+import player.Player;
 import utils.Constants;
 
 public class Game {
@@ -107,7 +108,7 @@ public class Game {
     private void printLostPlayers() {
         int place = 1;
         for (int i = board.lostPlayers.size() -1; i >= 0; i--) {
-            IOmanager.println(place + ". " + board.lostPlayers.get(i));
+            IOmanager.println(place + ". " + board.lostPlayers.get(i).getName());
             place++;
         }
     }

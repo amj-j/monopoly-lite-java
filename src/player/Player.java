@@ -1,12 +1,13 @@
-package game;
+package player;
 
+import game.Board;
 import utils.Constants;
 import utils.IOmanager;
 
 public class Player {
     private String name;
     private int position = 0;
-    private int money = Constants.INIT_MONEY;
+    protected int money = Constants.INIT_MONEY;
     private int imprisoned = 0;
 
 
@@ -57,7 +58,9 @@ public class Player {
     private void passedStart() {
         IOmanager.println("You passed start, you get " + Constants.PASS_START_MONEY);
         IOmanager.readEnter("claim money");
-        giveMoney(Constants.PASS_START_MONEY);
+        Banker.getFromBank(this, Constants.PASS_START_MONEY);
+        IOmanager.println("Your money: " + money);
+        IOmanager.readEnter("continue");
     }
 
     public void goToJail() {
@@ -74,14 +77,6 @@ public class Player {
         imprisoned = 0;
     }
 
-
-    public void giveMoney(int amount) {
-        money += amount;
-    }
-
-    public void takeMoney(int amount) {
-        money -= amount;
-    }
 
 
     public boolean lost() {

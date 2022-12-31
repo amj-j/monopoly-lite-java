@@ -1,9 +1,7 @@
 package tiles;
 
 import utils.IOmanager;
-
-import game.Player;
-import game.Transaction;
+import player.*;
 
 public class PropertyTile extends Tile {
     final String name;
@@ -26,10 +24,15 @@ public class PropertyTile extends Tile {
             offerToBuy(player);
         }
         else {
-            IOmanager.println(this.owner.getName() + " owns this property!");
-            IOmanager.println("You must pay them " + stayCost + "!");
-            IOmanager.readEnter("pay");
-            Transaction.transferMoney(player, this.owner, stayCost);
+            if (player == owner) {
+                IOmanager.println("You own this property!");
+            }
+            else {
+                IOmanager.println(this.owner.getName() + " owns this property!");
+                IOmanager.println("You must pay them " + stayCost + "!");
+                IOmanager.readEnter("pay");
+                Banker.transaction(player, this.owner, stayCost);
+            }
         }        
     }
 
@@ -40,7 +43,7 @@ public class PropertyTile extends Tile {
                 IOmanager.println("You don't have enough money to buy this property!");
             }
             else {
-                player.takeMoney(price);
+                Banker.payToBank(player, price);
                 this.owner = player;
                 IOmanager.println(this.name + " is yours now!");
             }

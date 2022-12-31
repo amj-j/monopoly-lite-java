@@ -1,8 +1,7 @@
 package cards.chance_cards;
 
+import player.Player;
 import utils.IOmanager;
-
-import game.Player;
 
 public class GoToJailChCard extends ChanceCard {
     

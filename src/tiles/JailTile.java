@@ -1,8 +1,7 @@
 package tiles;
 
+import player.Player;
 import utils.IOmanager;
-
-import game.Player;
 
 public class JailTile extends Tile {
 
