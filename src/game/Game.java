@@ -69,10 +69,12 @@ public class Game {
                 leavingJailPrematurely(player);
             }
         }
+        player.decreaseImprisoned();
     }
 
     private void leavingJailPrematurely(Player player) {
         IOmanager.println("You are out of jail!");
+        player.nullImprisoned();
         notInJail(player);
     }
 

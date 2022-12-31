@@ -36,7 +36,7 @@ public class Player {
         position += steps;
         if (position >= Constants.TILES_NUM) {
             position -= Constants.TILES_NUM;
-            if (position != Constants.TILES_NUM) {
+            if (position != 0) {
                 passedStart();
             }
         }
@@ -63,8 +63,15 @@ public class Player {
     public void goToJail() {
         moveTo(Constants.JAIL_TILE_INDEX, true);
         imprisoned = Constants.ROUNDS_IN_JAIL;
-        IOmanager.println("You are improsioned for " + Constants.ROUNDS_IN_JAIL + "rounds!");
-        IOmanager.readEnter("continue");
+        IOmanager.println("You are improsioned for " + Constants.ROUNDS_IN_JAIL + " rounds!");
+    }
+
+    public void decreaseImprisoned() {
+        imprisoned--;
+    }
+
+    public void nullImprisoned() {
+        imprisoned = 0;
     }
 
 
