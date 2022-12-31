@@ -3,7 +3,7 @@ package tiles;
 import utils.IOmanager;
 
 import game.Board;
-import player.Player;
+import people.Player;
 import cards.Card;
 
 public class ChanceTile extends Tile {

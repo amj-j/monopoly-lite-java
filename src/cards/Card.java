@@ -1,6 +1,6 @@
 package cards;
 
-import player.Player;
+import people.Player;
 
 public abstract class Card {
     public void playCard(Player player) {}

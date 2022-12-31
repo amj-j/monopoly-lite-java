@@ -1,7 +1,7 @@
 package tiles;
 
+import people.*;
 import utils.IOmanager;
-import player.*;
 
 public class PropertyTile extends Tile {
     final String name;

@@ -1,9 +1,8 @@
 package tiles;
 
 import utils.IOmanager;
+import people.*;
 import utils.Constants;
-
-import player.*;
 
 public class StartTile extends Tile {
 

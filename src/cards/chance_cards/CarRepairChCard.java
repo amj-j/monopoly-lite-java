@@ -1,6 +1,6 @@
 package cards.chance_cards;
 
-import player.*;
+import people.*;
 import utils.IOmanager;
 
 public class CarRepairChCard extends ChanceCard {

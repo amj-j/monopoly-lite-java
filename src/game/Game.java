@@ -1,7 +1,7 @@
 package game;
 
 import utils.IOmanager;
-import player.Player;
+import people.Player;
 import utils.Constants;
 
 public class Game {

@@ -1,6 +1,6 @@
 package tiles;
 
-import player.*;
+import people.*;
 import utils.IOmanager;
 
 public class PayTaxTile extends Tile {

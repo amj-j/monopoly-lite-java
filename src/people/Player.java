@@ -1,4 +1,4 @@
-package player;
+package people;
 
 import game.Board;
 import utils.Constants;

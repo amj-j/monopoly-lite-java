@@ -1,6 +1,6 @@
 package tiles;
 
-import player.Player;
+import people.Player;
 import utils.IOmanager;
 
 public class GoToJailTile extends Tile {

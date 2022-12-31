@@ -1,4 +1,4 @@
-package player;
+package people;
 
 public class Banker {
     
