@@ -10,6 +10,7 @@ public class PayTaxTile extends Tile {
     @Override
     public void steppedOn(Player player) {
         IOmanager.println("You have to pay a " + MONEY_AMOUNT + " tax!");
+        IOmanager.readEnter("pay");
         player.takeMoney(MONEY_AMOUNT);
     }
 }

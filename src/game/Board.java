@@ -13,10 +13,11 @@ import cards.chance_cards.*;
 public class Board {
     private static Board instance = null;
 
+    public Random dice = new Random();
     public ArrayList<Player> players = new ArrayList<Player>();
     public Tile[] tiles = new Tile[Constants.TILES_NUM];
     public Deck chanceDeck = new Deck();
-    public ArrayList<String> lostPlayers = new ArrayList<String>();
+    public ArrayList<Player> lostPlayers = new ArrayList<Player>();
 
     private Board() {
         initPlayers();

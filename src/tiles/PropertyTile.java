@@ -20,13 +20,15 @@ public class PropertyTile extends Tile {
 
     @Override
     public void steppedOn(Player player) {
+        IOmanager.println("You stepped on " + name + ".");
         if (this.owner == null) {
             IOmanager.println("Nobody owns this property!");
             offerToBuy(player);
         }
         else {
-            IOmanager.println("You stepped on " + this.owner.getName() + "'s property!");
+            IOmanager.println(this.owner.getName() + " owns this property!");
             IOmanager.println("You must pay them " + stayCost + "!");
+            IOmanager.readEnter("pay");
             Transaction.transferMoney(player, this.owner, stayCost);
         }        
     }

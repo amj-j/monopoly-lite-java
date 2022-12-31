@@ -8,8 +8,9 @@ public class BirthdayChCard extends ChanceCard {
     private static final int MONEY_AMOUNT = 1000;
 
     @Override
-    public void printCard(Player player) {
+    public void playCard(Player player) {
         IOmanager.println("You have birthday TODAY, you get " + MONEY_AMOUNT + ".");
+        IOmanager.readEnter("claim money");
         player.giveMoney(MONEY_AMOUNT);
     }
 }

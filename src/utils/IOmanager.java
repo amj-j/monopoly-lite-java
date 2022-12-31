@@ -30,11 +30,11 @@ public abstract class IOmanager {
     }
 
     public static boolean readYesNo(String text) {
-        String answer = readString(text + "(y or n)");
-        while (!(answer == "y" || answer == "n")) {
-            answer = readString("Enter \"y\" for Yes or \"n\" for No.");
+        String answer = readString(text + " (y or n)");
+        while (!(answer.equals("y") || answer.equals("n"))) {
+            answer = readString("Enter \"y\" for Yes or \"n\" for No");
         }
-        if (answer == "y") {
+        if (answer.equals("y")) {
             return true;
         }
         else {

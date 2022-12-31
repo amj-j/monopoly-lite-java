@@ -7,8 +7,9 @@ import game.Player;
 public class GoToJailChCard extends ChanceCard {
     
     @Override
-    public void printCard(Player player) {
+    public void playCard(Player player) {
         IOmanager.println("You are arrested! Go to jail!");
+        IOmanager.readEnter("continue");
         player.goToJail();
     }
 }

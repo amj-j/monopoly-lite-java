@@ -19,8 +19,7 @@ public class Constants {
     public static final int ROUNDS_IN_JAIL = 2;
     public static final int INIT_MONEY = 20000;
     public static final int PASS_START_MONEY = 1000;
-    public static final int STEP_ON_START_MONEY = 1000; 
-    //when stepped on start, player gets both PASS_START_MONEY and STEP_ON_START_MONEY
+    public static final int STEP_ON_START_MONEY = 2000; 
     public static final int TAX_TILE_MONEY = 500;
     public static final int LEAVE_JAIL_MONEY = 500;
 }
