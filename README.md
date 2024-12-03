@@ -3,7 +3,7 @@
 A simplified version of the game "Monopoly" in the form of a console JAVA aplication.
 
 ## My motivation
-This is my second object-oriented programming project.
+This is my second object-oriented programming project. I coded it in December of 2022.
 
 This project is based on an assignment originally given in the "Object-Oriented Programming" course at my university.
 Although I had not yet taken the course at the time, I found the assignment on the course website and decided to complete it as a self-directed challenge.
