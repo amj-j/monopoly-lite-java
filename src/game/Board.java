@@ -3,12 +3,11 @@ package game;
 import java.util.ArrayList;
 import java.util.Random;
 
+import cards.chance.*;
 import utils.Constants;
 import utils.IOmanager;
 import utils.PropertiesGetter;
 import tiles.*;
-
-import cards.chance_cards.*;
 import people.Player;
 
 public class Board {

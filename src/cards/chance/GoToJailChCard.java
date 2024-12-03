@@ -1,4 +1,4 @@
-package cards.chance_cards;
+package cards.chance;
 
 import people.Player;
 import utils.IOmanager;
