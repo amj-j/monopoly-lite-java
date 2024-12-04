@@ -12,6 +12,9 @@ My goal was to deepen my understanding of Java and object-oriented programming p
 I also completed three other assignments from the same course (from previous years) as part of this initiative. 
 These projects can be found on my GitHub: [Duck hunt](https://github.com/amj-j/duck-hunt-java), [Reversi](https://github.com/amj-j/reversi-java), and [Rook in maze](https://github.com/amj-j/rook-in-maze-java).
 
+### Goal
+This assignment focuses on practicing the basic principles of object-oriented programming.
+
 ## Prerequisites
 You need to have Java 1.8 (also known as Java 8) or higher installed on you computer to run this app.
 
