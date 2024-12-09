@@ -16,14 +16,15 @@ These projects can be found on my GitHub: [Duck hunt](https://github.com/amj-j/d
 This assignment focuses on practicing the basic principles of object-oriented programming.
 
 ## Prerequisites
-You need to have Java 1.8 (also known as Java 8) or higher installed on you computer to run this app.
+You need to have JDK 8 or higher installed on you computer to compile and run this app.
 
 ## Installation
-1. Download the ```duck-hunt.jar``` file and the ```property_list.txt``` file.
-2. Save both files in the same directory. (Both must be at the same directory level.)
-3. Open your terminal and navigate to folder in which the downloaded files are located.
-4. Type this command into the terminal to run the app: ```java -jar monopoly-lite.jar```.
-5. The app will run in your terminal.
+1. Open your terminal and navigate to folder in which you wish to clone this repository.
+2. Clone this repository using ```git clone https://github.com/amj-j/monopoly-lite-java.git```
+3. In your terminal, navigate inside the new directory created by cloning the repository.
+4. Execute this command to compile the source code: ```javac -d bin $(find src -name "*.java")``` (This command works on Linux, macOS, and Git Bash on Windows but not in Command Prompt or PowerShell. For Windows, use Git Bash terminal for compatibility, or list the source files manually.)
+5. Execute this command to run the app: ```java -cp bin Main```
+6. The app will run in your terminal.
 
 #### ```property_list.txt```
   - contains the list of properties (currently streets), that the players can buy
